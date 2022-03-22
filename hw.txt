@@ -1,0 +1,7 @@
+select  bills.cusname,billitems.itemname,bills.storeid,billitems.quantity,billitems.price from bills inner join billitems on bills.billid=billitems.billid;
+
+//all bills of the day all stores
+select count(bills.billid) from bills where date=CURRENT_DATE group by date;
+
+//all bills of the day with store
+select storeid,count(billid) from bills where date=CURRENT_DATE group by storeid;
